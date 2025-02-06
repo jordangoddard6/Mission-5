@@ -20,3 +20,23 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.currency-container {
+    position: relative;
+    display: inline-block;
+}
+
+    .currency-container::before {
+        content: "$";
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+.currency-input {
+    padding-left: 20px; /* Make space for the "$" */
+    text-align: right; /* Align text to the right */
+}

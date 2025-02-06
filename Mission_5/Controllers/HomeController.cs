@@ -20,6 +20,7 @@ namespace Mission_5.Controllers
 
         public IActionResult Calculator()
         {
+            var model = new CalculatorViewModel(); // Initialize model
             return View();
         }
 

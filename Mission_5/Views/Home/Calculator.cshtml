@@ -1,17 +1,27 @@
-﻿<div class="text-center" style="width:80%; margin:auto">
-	<h1>Tutoring Calculator</h1>
+﻿@model CalculatorViewModel
+
+<div class="text-center" style="width:80%; margin:auto">
+	<h1 class="display-4">Tutoring Calculator</h1>
 	<br />
-	<form>
-		<label>Tutoring Hours Required:</label><br />
-		<input type="number"/>
+	<form id="calculatorForm">
+		<label asp-for="Hours">Tutoring Hours Required:</label><br />
+		<input asp-for="Hours" type="number" style="text-align:center"/>
 		<br /><br />
-		<label>Cost per hour ($):</label><br />
-		<input type="number" value="20" disabled/>
+
+		
+		<label asp-for="HourlyRate">Cost per hour:</label><br />
+		<div class="currency-container">
+			<input asp-for="HourlyRate" class="currency-input" type="number" value="20" style="text-align:center" readonly />
+		</div>
 		<br /><br />
-		<button type="button">Calculate</button>
+
+		<button type="button" id="calculate">Calculate</button>
 		<br /><br />
-		<label>Total cost:</label><br />
-		<input type="number" readonly/>
+
+		<label asp-for="TotalCost"><b>Total cost:</b></label><br />
+		<div class="currency-container">
+			<input asp-for="TotalCost" class="currency-input" type="number" style="text-align:center" readonly />
+		</div>
 	</form>
 </div>
 
